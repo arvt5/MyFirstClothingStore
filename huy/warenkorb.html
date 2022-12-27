@@ -14,11 +14,7 @@
             font-family: 'Roboto Condensed', sans-serif;
             font-weight: 700;
         }
-        
-        .body {
-            background-color: black;
-        }
-        
+    
         .flex-container { 
             display: -webkit-flex;
             display: flex; 
@@ -46,12 +42,38 @@
             .desktop-12-cols {width: 100.00%;}
         }
 
-        #header {
-            text-align: center;
+        .header {
+            display: flex;
+            position: relative;
+        }
+
+        .header-navbar {
+            width: 60px;
+            height: 60px;
+            margin-top: 6px;
+        }
+
+        .header-name {
+            margin-left: 20px;
+        }
+        
+        .header-shopping-cart {
+            background: #F6F5F3;
+            border-radius: 10px;
+            width: 35px;
+            height: 33px;
+            margin-top: 16px;
+            padding: 5px 10px 5px 10px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .header span {
+            flex: 1;
         }
 
         .mfcs-main {
-            background: blue;
+            background: #e0e0e0;
             height: 670px;    
             padding: 40px;
             margin: 0;
@@ -95,14 +117,39 @@
             background-color: rgba(255, 255, 255, 0.8);
             text-align: center;
             padding: 20px 0;
-            font-size: 30px;
+            font-size: 25px;
             border-radius: 10px;
+        }
+
+        .mfcs-button {
+            background: #FDFDFD;
+            border-radius: 10px;
+            height: 70px;
+            margin-top: 0px;
+            padding: 0px 55px 0px 55px;
         }
 
         .mfcs-shopping-item-card-list { 
             list-style-type: none;
             margin: 0;
             padding: 0;
+            position: relative;
+        }
+
+        .mfcs-shopping-item-card-list-item {
+            font-size: 20px;
+        }
+
+        .mfcs-shopping-item-card-list-item-left {
+            margin-left: 20px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .mfcs-shopping-item-card-list-item-right {
+            margin-right: 20px;
+            text-align: right;
+            font-weight: 300;
         }
 
         li {
@@ -116,11 +163,14 @@
     </style>
 </head>
 <body>
-    <header id="header">
-        <h1>
+    <div class="header">
+        <img src="img/navbar.png" alt="navbar" class="header-navbar">
+        <h1 class="header-name">
             MyFirstClothingStore
         </h1>
-    </header>
+        <img src="img/shopping_cart.png" alt="shopping_cart" class="header-shopping-cart">
+    
+    </div>
 
     <div class="flex-container">
         <div class="mfcs-main desktop-12-cols phone-12-cols">
@@ -144,38 +194,40 @@
                         <div class="mfcs-shopping-item-card-infos">
                             <ul class="mfcs-shopping-item-card-list">
                                 <li class="mfcs-shopping-item-card-list-item">
-                                    <span>
+                                    <span class="mfcs-shopping-item-card-list-item-left">
                                         Farbe
                                     </span>
-                                    <span>
+                                    <span class="mfcs-shopping-item-card-list-item-right">
                                         Schwarz
                                     </span>
                                 </li>
                                 <li class="mfcs-shopping-item-card-list-item">
-                                    <span>
+                                    <span class="mfcs-shopping-item-card-list-item-left">
                                         Größe
                                     </span>
-                                    <span>
+                                    <span class="mfcs-shopping-item-card-list-item-right">
                                         M
                                     </span>
                                 </li>
                                 <li class="mfcs-shopping-item-card-list-item">
-                                    <span>
+                                    <span class="mfcs-shopping-item-card-list-item-left">
                                         Anzahl 1
                                     </span>
-                                    <span>
+                                    <span class="mfcs-shopping-item-card-list-item-right">
                                         4,00€
                                     </span>
                                 </li>
                             </ul>
                         </div>
                         <div class="mfcs-shopping-item-card-actions">
-                            <button class="mfcs-button">
-                                Details anzeigen 
-                            </button>
-                            <button class="mfcs-button">
-                                Löschen
-                            </button>
+                            <div class="mfcs-shopping-item-card-actions-background">
+                                <button class="mfcs-button">
+                                    Details anzeigen 
+                                </button>
+                                <button class="mfcs-button">
+                                    Löschen
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
