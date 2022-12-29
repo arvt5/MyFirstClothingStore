@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Warenkorb</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
@@ -48,9 +48,22 @@
         }
 
         .header-navbar {
+            overflow: hidden;
+            margin-top: 16px;
+            border-radius: 10px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .header-navbar-cropped {
             width: 60px;
             height: 60px;
-            margin-top: 6px;
+            margin: -10px -10px -10px -10px;
+        }
+
+        .header-navbar:hover {
+            background: #E0E0E0;
+            padding: 0 ;
         }
 
         .header-name {
@@ -66,6 +79,11 @@
             padding: 5px 10px 5px 10px;
             position: absolute;
             right: 20px;
+            cursor: pointer;
+        }
+
+        .header-shopping-cart:hover {
+            background-color: #f1eeea;
         }
 
         .header span {
@@ -74,7 +92,7 @@
 
         .mfcs-main {
             background: #e0e0e0;
-            height: 670px;    
+            height: 600px;    
             padding: 40px;
             margin: 0;
             border: 0;
@@ -127,6 +145,7 @@
             height: 70px;
             margin-top: 0px;
             padding: 0px 55px 0px 55px;
+            cursor: pointer;
         }
 
         .mfcs-shopping-item-card-list { 
@@ -160,21 +179,62 @@
             flex: 1;
         }
 
+        .mfcs-total-price { grid-area: totalPrice; }
+        .mfcs-buy-action { grid-area: action; }
+
+        .mfcs-buy-primary {
+            margin-top: 10px;
+            display: grid;
+            grid-template-areas:
+                'totalPrice '
+                'action';
+            gap: 10px;
+            background-color: #E0E0E0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .mfcs-total-price {
+            font-size:x-large;
+            text-align: right;
+        }
+
+        .mfcs-buy-action-background {
+            margin-left: 1250px;
+        }
+
+        .mfcs-buy-button {
+            border: 1px solid black;
+            border-radius: 3px;
+            margin-left: 20px;
+            transform: scale(1.5);
+            cursor: pointer;
+        }   
+
+        .mfcs-buy-button:hover {
+            background-color: #dfdfdf;
+        }
+        
+        .mfcs-button:hover {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="img/navbar.png" alt="navbar" class="header-navbar">
+        <div class="header-navbar">
+            <img src="img/navbar.png" alt="navbar" class="header-navbar-cropped">
+        </div>
         <h1 class="header-name">
             MyFirstClothingStore
         </h1>
         <img src="img/shopping_cart.png" alt="shopping_cart" class="header-shopping-cart">
-    
     </div>
 
     <div class="flex-container">
         <div class="mfcs-main desktop-12-cols phone-12-cols">
             <div class="mfcs-cart desktop-6-cols phone-12-cols"> 
+                <!--<button></button> -->  
                 <div class="mfcs-cart-primary">
                     <div class="mfcs-cart-head">
                         <h1>
@@ -229,6 +289,18 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mfcs-buy-primary">
+                <div class="mfcs-total-price">
+                    Gesamtsumme: 4€
+                </div>
+                <div class="mfcs-buy-action">
+                    <div class="mfcs-buy-action-background">
+                        <button class="mfcs-buy-button">
+                            KAUFEN
+                        </button>
                     </div>
                 </div>
             </div>
